@@ -12,8 +12,8 @@ public class MvcController {
 	
 	MvcService service = new MvcService();
 	
-	@RequestMapping("/send")
-	public ModelAndView hello(@ModelAttribute MvcUser user ) {
+	@RequestMapping("/send" )
+	public ModelAndView hello(@ModelAttribute("MvcUser") MvcUser user ) {
 		System.out.println("Inside hello");
 		ModelAndView model = new ModelAndView("welcome.jsp");
 		if (user != null) {
