@@ -1,8 +1,7 @@
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -12,26 +11,28 @@
 
 <script type="text/javascript">
 	function validate() {
+		document.write.console("Java Script file");
 		var name = document.loginForm.userName.value;
+		var age = document.loginForm.age.value;
+		var email = document.loginForm.email.value;
+		
 		if (name == null || name == "") {
-			alert("Enter Name");
+			alert("fill the details");
 			return false;
 		}
 	}
 </script>
 </head>
 <body>
-	<h1>Hello Akash</h1>
+	<h1>Welcome User</h1>
 
-	<form:form name="loginForm" action="send" method="get"
-		modelAttribute="MvcUser" commandName="MvcUser"
-		onsubmit="return validate()">
+	<form:form  name="loginForm" action="send" method="post" commandName="User"  onsubmit="validate()">
 
-Enter Name :<input type="text" path="name" name="userName" />
+<label>Enter Name :</label><form:input type="text" path="name" name= "userName"/>
 		<br>
-Enter Age : <input type="text" path="age" name="userAge" />
+<label>Enter Age : </label><form:input type="text" path="age" name = "age"/>
 		<br>
-Enter Email : <input type="email" path="email" name="userEmail" />
+<label>Enter Email : </label><form:input type="email" path="email" name = "email"/>
 		<br>
 
 		<input type="submit" value="SUBMIT -->>">

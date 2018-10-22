@@ -2,16 +2,17 @@ package org.model;
 
 import java.sql.Timestamp;
 
-public class MvcUser {
+
+public class User {
 	private String name;
-	private int age;
+	private Integer age;
 	private String email;
 	private Timestamp createdTimestamp;
 	private Timestamp updateTimestamp;
 	
 	
 	
-	public MvcUser() { }
+	public User() { }
 	
 	public String getName() {
 		return name;
@@ -19,10 +20,10 @@ public class MvcUser {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 	public String getEmail() {

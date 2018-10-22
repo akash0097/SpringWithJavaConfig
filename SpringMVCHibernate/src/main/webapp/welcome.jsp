@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Hello ${user.getName()}</h1>
+<h1>Hello ${User.name}</h1>
 <h1>Message : ${message} </h1>
 </body>
 </html>
