@@ -24,7 +24,7 @@ public class MvcController {
 	
 	@RequestMapping("send" )
 	public ModelAndView hello(@ModelAttribute("User") User user ) {
-		System.out.println("Inside hello");
+		System.out.println("Inside controller");
 		ModelAndView model = new ModelAndView("welcome.jsp");
 		if (user.getAge() != null) {
 			System.out.println("User Name = " + user.getName());

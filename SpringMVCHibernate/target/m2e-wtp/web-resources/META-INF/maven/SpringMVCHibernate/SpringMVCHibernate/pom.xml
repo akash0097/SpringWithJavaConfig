@@ -50,11 +50,19 @@
 			<version>4.3.7.RELEASE</version>
 		</dependency>
 		<!-- Mysql Connector -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>6.0.5</version>
-		</dependency>
+		<!-- <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> 
+			<version>6.0.5</version> </dependency> -->
+
+		<!-- Oracle connector -->
+		<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc14 -->
+		<!-- https://mvnrepository.com/artifact/oracle/ojdbc6 -->
+		<!-- <dependency>
+			<groupId>oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>11.2.0.3</version>
+		</dependency> -->
+
+
 		<!-- Hibernate 5.2.9 Final -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
