@@ -8,7 +8,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
-	public StandardServiceRegistryBuilder serviceregistry;
+	public StandardServiceRegistryBuilder serviceregistryBuilder;
 	public MetadataSources metaDataSources;
 	public Metadata metaData;
 	public SessionFactory sessionFactory;
@@ -16,11 +16,17 @@ public class HibernateUtil {
 
 	public Session getHibernateSession() {
 		Configuration configuration = new Configuration().configure();
-		serviceregistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+		
+		serviceregistryBuilder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+		
 		metaDataSources = new MetadataSources();
-		metaData = metaDataSources.buildMetadata(serviceregistry.build());
-		 sessionFactory = metaData.getSessionFactoryBuilder().build();
+		
+		metaData = metaDataSources.buildMetadata(serviceregistryBuilder.build());
+		
+		sessionFactory = metaData.getSessionFactoryBuilder().build();
+		
 		session = sessionFactory.openSession();
+		
 		return session;
 	}
 
